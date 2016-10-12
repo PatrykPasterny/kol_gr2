@@ -1,23 +1,28 @@
-#Write a library that contains a class that can represent any 2𝑥2 real matrice. 
-#Include two functions to calculate the sum and product of two matrices. 
-#Next, write a program that imports this library module and use it to perform calculations.
-#Examples:
-#
-# matrix_1 = Matrix(4,5,6,7)
-# matrix_2 = Matrix(2,2,2,1)
-#
-# matrix_3 = matrix_2.add(matrix_1)
-#
-#Try to expand your implementation as best as you can. 
-#Think of as many features as you can, and try implementing them.
-#(If you want you can expand implementation to NxN matrix.)
-#Make intelligent use of pythons syntactic sugar (overloading, iterators, generators, etc)
-#Most of all: CREATE GOOD, RELIABLE, READABLE CODE.
-#The goal of this task is for you to SHOW YOUR BEST python programming skills.
-#Impress everyone with your skills, show off with your code.
-#
-#When you are done upload this code to your github repository. 
-#The whole repository MUST be named "kol_gr2"! 
-#
-#Delete these comments before commit!
-#Good luck.
+class Matrix:
+	def __init__(self, a11,a12,a21,a22):
+		self.a11=a11
+		self.a12=a12
+		self.a21=a21
+		self.a22=a22
+		
+	def add(self, second):
+		self.a11+=second.a11
+		self.a12+=second.a12
+		self.a21+=second.a21
+		self.a22+=second.a22
+		return self
+	
+		
+	def printf(self):
+		print "Element a11 wybranej macierzy 2x2 jest rowny: %s" %self.a11
+		print "Element a11 wybranej macierzy 2x2 jest rowny: %s" %self.a12
+		print "Element a11 wybranej macierzy 2x2 jest rowny: %s" %self.a21
+		print "Element a11 wybranej macierzy 2x2 jest rowny: %s" %self.a22
+	
+a=Matrix(1,2,3,4)
+a.printf()
+b=Matrix(2,3,4,5)
+c=a.add(b)
+
+print "\n"
+c.printf()
